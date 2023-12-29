@@ -4,13 +4,14 @@ import android.annotation.SuppressLint
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import com.alejandro_dev_links.disenioslogin.presentation.screens.login.loginuno.screenregisterloginuno.compnents.RegisterComponents
+import androidx.navigation.NavHostController
+import com.alejandro_dev_links.disenioslogin.presentation.screens.login.loginuno.screenregisterloginuno.compnents.RegisterContent
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavHostController) {
     Scaffold {
-        RegisterComponents()
+        RegisterContent(navController = navController)
     }
 }

@@ -1,6 +1,7 @@
 package com.alejandro_dev_links.disenioslogin.presentation.screens.login.loginuno.screenloginuno.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -46,13 +47,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.alejandro_dev_links.disenioslogin.R
 import com.alejandro_dev_links.disenioslogin.presentation.mycomponents.DefaultTextField
 import com.alejandro_dev_links.disenioslogin.presentation.mycomponents.ImageWithCircleBorder
-import com.alejandro_dev_links.disenioslogin.ui.theme.DiseniosLoginTheme
+import com.alejandro_dev_links.disenioslogin.presentation.navigation.screen.auth.AuthScreen
 import com.alejandro_dev_links.disenioslogin.ui.theme.GrayVariant
 import com.alejandro_dev_links.disenioslogin.ui.theme.PrimaryBlue
 
@@ -60,7 +61,7 @@ import com.alejandro_dev_links.disenioslogin.ui.theme.PrimaryBlue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginUnoContent() {
+fun LoginUnoContent(navController: NavHostController) {
     var mPasswordView by remember { mutableStateOf(false) }
     Box(
         modifier = Modifier
@@ -217,6 +218,9 @@ fun LoginUnoContent() {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .clickable {
+                    navController.navigate(route = AuthScreen.Register1.route)
+                }
                 .align(Alignment.BottomEnd)
                 .padding(bottom = 30.dp),
             horizontalArrangement = Arrangement.End
@@ -253,13 +257,5 @@ fun LoginUnoContent() {
                 }
             }
         }
-    }
-}
-
-@Composable
-@Preview
-fun LoginUnoContentPreview() {
-    DiseniosLoginTheme {
-        LoginUnoContent()
     }
 }

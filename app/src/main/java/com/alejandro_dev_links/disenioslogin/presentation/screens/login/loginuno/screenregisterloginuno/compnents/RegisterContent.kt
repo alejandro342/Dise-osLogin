@@ -1,6 +1,7 @@
 package com.alejandro_dev_links.disenioslogin.presentation.screens.login.loginuno.screenregisterloginuno.compnents
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -36,19 +37,20 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.alejandro_dev_links.disenioslogin.R
 import com.alejandro_dev_links.disenioslogin.presentation.mycomponents.DefaultTextField
 import com.alejandro_dev_links.disenioslogin.presentation.mycomponents.ImageWithCircleBorder
-import com.alejandro_dev_links.disenioslogin.ui.theme.DiseniosLoginTheme
+import com.alejandro_dev_links.disenioslogin.presentation.navigation.Graph
+import com.alejandro_dev_links.disenioslogin.presentation.navigation.screen.auth.AuthScreen
 import com.alejandro_dev_links.disenioslogin.ui.theme.GrayVariant
 import com.alejandro_dev_links.disenioslogin.ui.theme.PrimaryBlue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegisterComponents() {
+fun RegisterContent(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -196,7 +198,12 @@ fun RegisterComponents() {
             modifier = Modifier
                 .fillMaxWidth()
                 .align(Alignment.BottomStart)
-                .padding(bottom = 30.dp),
+                .padding(bottom = 30.dp)
+                .clickable {
+                    navController.navigate(route = AuthScreen.Login1.route) {
+                        popUpTo(Graph.AUTH1) { inclusive = true }
+                    }
+                },
             horizontalArrangement = Arrangement.Start
         ) {
             Card(
@@ -234,13 +241,5 @@ fun RegisterComponents() {
                 }
             }
         }
-    }
-}
-
-@Composable
-@Preview
-fun RegisterComponentsPreview() {
-    DiseniosLoginTheme {
-        RegisterComponents()
     }
 }
