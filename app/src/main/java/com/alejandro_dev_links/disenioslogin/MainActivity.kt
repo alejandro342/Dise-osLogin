@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.alejandro_dev_links.disenioslogin.presentation.screens.login.loginuno.screen.LoginScreen
+import com.alejandro_dev_links.disenioslogin.presentation.screens.login.loginuno.screenloginuno.screen.LoginScreen
 import com.alejandro_dev_links.disenioslogin.ui.theme.DiseniosLoginTheme
 
 class MainActivity : ComponentActivity() {
