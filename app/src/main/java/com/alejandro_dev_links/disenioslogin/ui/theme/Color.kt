@@ -14,3 +14,8 @@ val PrimaryBlue =Color(0xFF0A37DA)
 val SecondaryBlue =Color(0xFF042780)
 val BlueVariant =Color(0xFF304F9E)
 val GrayVariant = Color(0xFF757575)
+
+//Login dos
+val BlueCircle = Color(0xFF000107)
+val BluePastel = Color(0xFF90D1F3)
+val OrangePrimary = Color(0xFFFF5722)

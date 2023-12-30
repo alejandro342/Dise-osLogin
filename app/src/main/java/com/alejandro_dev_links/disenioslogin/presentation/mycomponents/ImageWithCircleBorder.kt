@@ -15,7 +15,7 @@ fun ImageWithCircleBorder(
     painter: Painter,
     contentDescription: String?,
     modifier: Modifier = Modifier
-) {//para el circulo blanco
+) {
     Box(modifier = modifier.drawWithContent {
         drawContent()
         drawCircle(

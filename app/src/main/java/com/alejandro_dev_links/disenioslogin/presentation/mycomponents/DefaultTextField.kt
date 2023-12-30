@@ -14,7 +14,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import com.alejandro_dev_links.disenioslogin.ui.theme.GrayVariant
 
-//Empezamos ah configurar o crear nustro componente reutilizable de campo de texto
+//Empezamos ah configurar o crear nuestro componente reutilizable de campo de texto
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DefaultTextField(
